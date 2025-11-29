@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator Kenaikan Bintang</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>⭐ Kalkulator Kenaikan Bintang</h1>
+      <p class="subtitle">
+        Sistem: Bintang 0-6 | Setiap kenaikan butuh 2 karakter level sebelumnya
+      </p>
+
+      <div class="info-box">
+        <strong>📖 Cara Kerja Sistem:</strong>
+        • Bintang 0 = 1 karakter dasar<br />
+        • Bintang 1 = 2 karakter bintang 0<br />
+        • Bintang 2 = 2 karakter bintang 1 (setara 4 bintang 0)<br />
+        • Dan seterusnya... (2^n formula)
+      </div>
+
+      <div class="input-group">
+        <label>Bintang Target:</label>
+        <div class="star-selector" id="targetStarSelector">
+          <button class="star-btn" data-star="1">★ 1</button>
+          <button class="star-btn" data-star="2">★ 2</button>
+          <button class="star-btn" data-star="3">★ 3</button>
+          <button class="star-btn" data-star="4">★ 4</button>
+          <button class="star-btn" data-star="5">★ 5</button>
+          <button class="star-btn active" data-star="6">★ 6</button>
+        </div>
+      </div>
+
+      <div class="inventory-section">
+        <h3>📦 Inventori Karakter yang Dimiliki</h3>
+        <p style="color: #777; font-size: 14px; margin-bottom: 15px">
+          Kosongkan jika tidak punya karakter bintang tersebut
+        </p>
+        <div class="inventory-grid">
+          <div class="inventory-item">
+            <label>Bintang 0 ★</label>
+            <input type="number" id="inv0" min="0" placeholder="0" value="0" />
+          </div>
+          <div class="inventory-item">
+            <label>Bintang 1 ★</label>
+            <input type="number" id="inv1" min="0" placeholder="0" />
+          </div>
+          <div class="inventory-item">
+            <label>Bintang 2 ★</label>
+            <input type="number" id="inv2" min="0" placeholder="0" />
+          </div>
+          <div class="inventory-item">
+            <label>Bintang 3 ★</label>
+            <input type="number" id="inv3" min="0" placeholder="0" />
+          </div>
+          <div class="inventory-item">
+            <label>Bintang 4 ★</label>
+            <input type="number" id="inv4" min="0" placeholder="0" />
+          </div>
+          <div class="inventory-item">
+            <label>Bintang 5 ★</label>
+            <input type="number" id="inv5" min="0" placeholder="0" />
+          </div>
+        </div>
+      </div>
+
+      <button class="calculate-btn" onclick="calculate()">
+        Hitung Kebutuhan
+      </button>
+
+      <div class="result" id="result">
+        <h2>📊 Hasil Perhitungan</h2>
+        <div class="result-item">
+          <span class="label"
+            >Total Kebutuhan untuk Bintang
+            <span id="targetDisplay">6</span>:</span
+          >
+          <span class="value" id="totalNeeded">0</span>
+        </div>
+        <div class="result-item">
+          <span class="label">Total Nilai yang Sudah Dimiliki:</span>
+          <span class="value" id="totalOwned">0</span>
+        </div>
+        <div class="result-item highlight">
+          <span class="label">Sisa Karakter Bintang 0 yang Dibutuhkan:</span>
+          <span class="value" id="remaining">0</span>
+        </div>
+
+        <div class="breakdown">
+          <h4>📋 Rincian Inventori (dalam nilai Bintang 0):</h4>
+          <div id="breakdownList"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

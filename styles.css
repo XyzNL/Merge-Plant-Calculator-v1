@@ -1,0 +1,258 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 700px;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  color: #667eea;
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  margin-bottom: 25px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.star-selector {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.star-btn {
+  padding: 12px 20px;
+  border: 2px solid #667eea;
+  background: white;
+  color: #667eea;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.star-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.star-btn.active {
+  background: #667eea;
+  color: white;
+}
+
+.inventory-section {
+  background: #f8f9ff;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+}
+
+.inventory-section h3 {
+  color: #667eea;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+}
+
+.inventory-item {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px solid #e0e0e0;
+  transition: all 0.3s;
+}
+
+.inventory-item:hover {
+  border-color: #667eea;
+  transform: translateY(-2px);
+}
+
+.inventory-item label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+.inventory-item input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 600;
+  color: #667eea;
+  transition: border-color 0.3s;
+}
+
+.inventory-item input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.inventory-item input::placeholder {
+  color: #bbb;
+}
+
+.calculate-btn {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s;
+  margin-top: 20px;
+}
+
+.calculate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.result {
+  margin-top: 30px;
+  padding: 25px;
+  background: #f8f9ff;
+  border-radius: 15px;
+  border-left: 5px solid #667eea;
+  display: none;
+}
+
+.result.show {
+  display: block;
+  animation: slideIn 0.5s;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.result h2 {
+  color: #667eea;
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+
+.result-item {
+  padding: 12px;
+  margin-bottom: 10px;
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result-item .label {
+  color: #555;
+  font-weight: 500;
+}
+
+.result-item .value {
+  color: #667eea;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.result-item.highlight {
+  background: #667eea;
+}
+
+.result-item.highlight .label,
+.result-item.highlight .value {
+  color: white;
+}
+
+.breakdown {
+  margin-top: 15px;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+}
+
+.breakdown h4 {
+  color: #764ba2;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.breakdown-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+}
+
+.breakdown-item:last-child {
+  border-bottom: none;
+}
+
+.info-box {
+  background: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #856404;
+}
+
+.info-box strong {
+  display: block;
+  margin-bottom: 5px;
+}
